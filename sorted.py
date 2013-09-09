@@ -8,16 +8,28 @@ class MyDict:
         >>> a.keys()
         ['a', 'b', 'c']
         """
-        return self.dict.keys().sort()
+        sorted_keys = self.dict.keys()
+        sorted_keys.sort()
+        return sorted_keys
 
     def values(self):
-        return self.dict.values()
+        """
+        >>> a = MyDict({'a': 1, 'b': 2, 'c': 3})
+        >>> a.values()
+        [1, 2, 3]
+        """
+        sorted_values = self.dict.values()
+        sorted_values.sort()
+        return sorted_values
+
 
 
 def main():
     d = MyDict({'a' : 1, 'b' : 2, 'c' : 3})
-    d.keys()
+    print( d.keys() )
+    print( d.values() )
 
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
+    main()
