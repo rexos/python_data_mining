@@ -5,10 +5,9 @@ def perform_operation(a):
 
 data = []
 
-fd = open( argv[1], 'r' )
-for line in fd:
-    line = line.split(' ')
-    data.extend([[int(x) for x in line]])
-fd.close()
+with open( argv[1], 'r' ) as f:
+    for line in f:
+        line = line.split(' ')
+        data.extend([[int(x) for x in line]])
 
 print( perform_operation(data) )
