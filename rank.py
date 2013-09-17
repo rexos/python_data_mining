@@ -6,4 +6,4 @@ lines = fd.readlines()
 lines = [line.strip().split() for line in lines]
 lines = mat( map( lambda x: map(lambda y: int(y), x), lines ) )
 U,s,V = linalg.svd(lines)
-print('rank --> 'size(filter(lambda x: x!=0, s)))
+print('rank --> %d' %size(filter(lambda x: x!=0, s)))
