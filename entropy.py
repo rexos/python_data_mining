@@ -17,7 +17,7 @@ def local_entropy( classes ):
     clust_size = sum( classes )
     num_class = len( classes )
     logs_data = map( lambda c: class_prob( c, clust_size ), classes )
-    logs_data = map( lambda x: x * log( x, 2 ), logs_data )
+    logs_data = map( lambda x: x * log( x, 2 ) if x > 0 else 0, logs_data )
     return -sum( logs_data ) * num_class
 
 def entropy( clusters ):
